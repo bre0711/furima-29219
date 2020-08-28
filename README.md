@@ -2,16 +2,23 @@
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| nickname        | string  | null: false |
+| email           | string  | null: false |
+| password        | string  | null: false |
+| first_name      | string  | null: false |
+| last_name       | string  | null: false |
+| first_kana_name | string  | null: false |
+| last_kana_name  | string  | null: false |
+| year            | integer | null: false |
+| month           | integer | null: false |
+| day             | integer | null: false |
 
 ### Association
 
 - has_many :items
-- has_one  :buyer
+- has_many  :buyer
 
 
 
@@ -20,8 +27,8 @@
 | Column           | Type        | Options                           |
 | ---------------  | ----------- | --------------------------------- |
 | image            | string      | null: false                       |
-| item_name        | string      | null: false                       |
-| item_description | text        | null: false                       |
+| name             | string      | null: false                       |
+| description      | text        | null: false                       |
 | category         | integer     | null: false                       |
 | states           | integer     | null: false                       |
 | burden           | integer     | null: false                       |
@@ -38,7 +45,7 @@
 
 
 
-## buyer テーブル
+## buyers テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -53,7 +60,7 @@
 
 
 
-## shipping-address テーブル
+## shipping-addresses テーブル
 
 | Column          | Type       | Options                          |
 | --------------- | ---------- | -------------------------------- |
