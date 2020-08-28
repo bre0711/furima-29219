@@ -2,23 +2,21 @@
 
 ## users テーブル
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| nickname        | string  | null: false |
-| email           | string  | null: false |
-| password        | string  | null: false |
-| first_name      | string  | null: false |
-| last_name       | string  | null: false |
-| first_kana_name | string  | null: false |
-| last_kana_name  | string  | null: false |
-| year            | integer | null: false |
-| month           | integer | null: false |
-| day             | integer | null: false |
+| Column              | Type    | Options     |
+| ------------------- | ------- | ----------- |
+| nickname            | string  | null: false |
+| email               | string  | null: false |
+| password            | string  | null: false |
+| first_name          | string  | null: false |
+| last_name           | string  | null: false |
+| first_kana_name     | string  | null: false |
+| last_kana_name      | string  | null: false |
+| birthday            | date    | null: false |
 
 ### Association
 
-- has_many :items
-- has_many  :buyer
+- has_many  :items
+- has_many  :buyers
 
 
 
@@ -68,7 +66,7 @@
 | city            | string     | null: false                      |
 | address         | string     | null: false                      |
 | building        | string     |                                  |
-| phone_number    | string    | null: false                      |
+| phone_number    | string     | null: false                      |
 | buyer           | references | null: false, foreign_key :true   |
 | prefecture      | integer    | null: false                      |
 
