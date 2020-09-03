@@ -9,11 +9,9 @@ window.addEventListener('load', function(){
   tax = itemPrice * 0.1;
   fee.innerHTML = tax
   fee.innerHTML = Math.round(fee.innerHTML);
-  console.log(fee.innerHTML)
 
   const calculate = document.getElementById("profit")
   calculate.innerHTML = itemPrice - tax
   calculate.innerHTML = Math.round(calculate.innerHTML);
-  console.log(calculate.innerHTML)
   })
 })
