@@ -1,5 +1,4 @@
 window.addEventListener('load', function(){
-  console.log("test")
   const originalPrice = document.getElementById("item-price")
   originalPrice.addEventListener('input', function(){
 
