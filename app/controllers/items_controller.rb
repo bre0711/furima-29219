@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :destroy]
-  before_action :set_user, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -49,10 +48,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end
-
-  def set_user
-    @user = User.find(params[:id])
   end
 
   def move_to_index
