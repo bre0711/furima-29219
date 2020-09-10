@@ -8,12 +8,13 @@
     </h2>
     <div class='item-img-content'>
       <%= image_tag @item.image , class:"item-box-img" %>
-    </div>
-    <% if @item.buyer != nil %>
+      <% if @item.buyer != nil %>
       <div class='sold-out'>
         <span>Sold Out!!</span>
       </div>
-    <% else %>
+    <% end %>
+    </div>
+    
       <div class="item-price-box">
         <span class="item-price">
           <%= @item.price %><span>円</span>
@@ -21,7 +22,7 @@
         <span class="item-postage">
           (税込) 送料込み
         </span>
-    <% end %>
+  
     </div>
     <% if @item.buyer == nil %>
       <% if user_signed_in? && @item.user_id == current_user.id %>
