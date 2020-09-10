@@ -58,7 +58,7 @@
 
 
 
-## shipping-addresses テーブル
+## purchases テーブル
 
 | Column          | Type       | Options                          |
 | --------------- | ---------- | -------------------------------- |
