@@ -1,7 +1,11 @@
 class PurchasesController < ApplicationController
   before_action :set_item, only: [:index, :create]
-  before_action :move_to_root_path, only: [:index]
+  
+  before_action :authenticate_user!, only: [:index]
+
   def index
+    
+    return redirect_to root_path if @item.user_id == current_user.id || @item.buyer != nil
     @purchases = Purchase.order('created_at DESC')
     @purchase = UserPurchase.new
   end
@@ -37,10 +41,6 @@ class PurchasesController < ApplicationController
     )
   end
 
-  def move_to_root_path
-    @item = Item.find(params[:item_id])
-    redirect_to root_path unless user_signed_in?
-    redirect_to root_path unless @item.user_id != current_user.id 
-    redirect_to root_path unless @item.user_id == current_user.id 
-  end
+
+ 
 end

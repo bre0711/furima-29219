@@ -27,7 +27,7 @@
  
     <% if @item.buyer == nil %>
       <% unless user_signed_in? %>
-           <%= link_to '購入画面に進む', new_user_registration_path,class:"item-red-btn"%>
+        <%= link_to '購入画面に進む', new_user_registration_path,class:"item-red-btn"%>
       <% else %>
             <% if @item.user_id == current_user.id %>
               <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %>
