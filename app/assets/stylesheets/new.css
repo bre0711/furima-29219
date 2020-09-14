@@ -227,3 +227,9 @@
 .inc {
   font-size: 13px;
 }
+
+#image-list img{
+  height: 50vh;
+  width: 50vh;
+  object-fit: contain;
+}
