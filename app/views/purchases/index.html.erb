@@ -8,7 +8,12 @@
  
     <%# 購入内容の表示 %>
     <div class='buy-item-info'>
-      <%= image_tag @item.image, class: 'buy-item-img' %>
+    <%# １枚目だけを表示したい %>
+    <% @item.images.each do |image| %>
+      <%= image_tag image, class:'buy-item-img' %>
+      <% break %>
+    <% end %>
+    <%# １枚目だけを表示したい %>
       <div class='buy-item-right-content'>
         <h2 class='buy-item-text'>
           <%= @item.name %>
@@ -32,7 +37,7 @@
     </div>
     <%# /支払額の表示 %>
 
-    <%= form_with url: item_purchases_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with model: @purchase,url: item_purchases_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
       <%=render 'shared/error_messages', model: @purchase %>
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
