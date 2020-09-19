@@ -4,7 +4,6 @@ class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: [:index]
 
   def index
-    
     return redirect_to root_path if @item.user_id == current_user.id || @item.buyer != nil
     @purchases = Purchase.order('created_at DESC')
     @purchase = UserPurchase.new
@@ -12,6 +11,7 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase = UserPurchase.new(purchase_params)
+
     if @purchase.valid?
       pay_item
       @purchase.save

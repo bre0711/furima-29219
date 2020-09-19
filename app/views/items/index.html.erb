@@ -133,12 +133,13 @@
           
             <% item.images.each do |image| %>
               <%= image_tag image, class:'item-img' %>
-              <% break %>
+              
                 <% if item.buyer != nil %>
                   <div class='sold-out'>
                     <span>Sold Out!!</span>
                   </div>
                 <% end %>
+                <% break %>
             <% end %>
           </div>
 
